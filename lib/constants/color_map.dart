@@ -3,7 +3,7 @@ import 'package:githubclone/constants/colors.dart';
 
 
   final Map<String, Color> colorMap= {
-    'python' : GithubColors.python,
+    'Python' : GithubColors.python,
     'Java' : GithubColors.java,
     'Dart' : GithubColors.dart,
     'C++' : GithubColors.cpp,

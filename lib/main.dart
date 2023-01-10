@@ -1,10 +1,11 @@
+import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:githubclone/constants/asset_path.dart';
+import 'package:githubclone/constants/colors.dart';
 import 'package:githubclone/models/repo.dart';
 import 'package:githubclone/screens/home.dart';
-import 'package:githubclone/services/commits.dart';
-import 'package:githubclone/services/languages.dart';
 import 'package:githubclone/services/repos.dart';
 
 
@@ -19,7 +20,6 @@ void main() async {
   // {
   //   print(repoList[i].language);
   // }
-  await getAllLanguages('yuktagopalani', 'FizzBuzz-Hacktoberfest-2021');
   runApp(const MyApp());
 }
 
@@ -36,7 +36,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
       ),
       //initialRoute: RoutesName.onBoardScreen,
-      home: const HomePage(),
+      home: EasySplashScreen(
+        logo: Image.asset(GithubAssetPath.githubIcon, height: 80),
+        title: const Text(
+            "Git Clone",
+            style: TextStyle(color: GithubColors.white, fontWeight: FontWeight.bold, fontSize: 24)
+        ),
+        backgroundColor: GithubColors.backgroundColor,
+        loaderColor: GithubColors.white,
+        showLoader: true,
+        loadingText: const Text("Loading...", style: TextStyle(color: GithubColors.white, fontSize: 18, fontWeight: FontWeight.w500 )),
+        navigator: const HomePage(),
+        durationInSeconds: 4,
+      ),
       //getPages: AppRoutes.routes,
     );
   }
