@@ -16,7 +16,7 @@ class Repo{
   List<dynamic> _topics = [];
   String _license = '';
 
-  // Repo.ForNull();
+  Repo.ForNull();
 
   Repo.name(
       this._name,

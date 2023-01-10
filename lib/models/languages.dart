@@ -1,6 +1,8 @@
 class Languages{
   Map<String,int> _languages = {};
 
+  Languages.ForNull();
+
   Map<String, int> get languages => _languages;
 
   set languages(Map<String, int> value) {

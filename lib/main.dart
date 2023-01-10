@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:githubclone/models/repo.dart';
 import 'package:githubclone/screens/home.dart';
 import 'package:githubclone/services/commits.dart';
+import 'package:githubclone/services/languages.dart';
 import 'package:githubclone/services/repos.dart';
 
 
@@ -18,7 +19,7 @@ void main() async {
   // {
   //   print(repoList[i].language);
   // }
-  await getLastCommit('yuktagopalani', 'Kitaab');
+  await getAllLanguages('yuktagopalani', 'FizzBuzz-Hacktoberfest-2021');
   runApp(const MyApp());
 }
 
