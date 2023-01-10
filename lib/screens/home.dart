@@ -5,6 +5,7 @@ import 'package:githubclone/constants/color_map.dart';
 import 'package:githubclone/constants/colors.dart';
 import 'package:githubclone/models/repo.dart';
 import 'package:githubclone/models/rrepo.dart';
+import 'package:githubclone/screens/commits.dart';
 import 'package:githubclone/services/repos.dart';
 
 
@@ -80,48 +81,53 @@ class HomePage extends StatelessWidget {
                           thickness: 0.2,
                         ),
                         const SizedBox(height: 10),
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              WidgetSpan(
-                                alignment: PlaceholderAlignment.middle,
-                                baseline: TextBaseline.ideographic,
-                                child: Container(
-                                    padding: const EdgeInsets.only(right: 6),
-                                    child: Image.asset(GithubAssetPath.repoIcon, height: 22, color: GithubColors.offWhite,)),
-                              ),
-                              TextSpan(
-                                text: data[index].name ?? '',
-                                style: const TextStyle(
-                                    color: GithubColors.heading,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              WidgetSpan(
-                                alignment: PlaceholderAlignment.middle,
-                                baseline: TextBaseline.ideographic,
-                                child: Container(
-                                  margin:
-                                  const EdgeInsets.symmetric(horizontal: 2),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 2, horizontal: 4),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                        color: GithubColors.offWhite,
-                                        width: 0.5),
-                                  ),
-                                  child: Text(
-                                    data[index].private == true
-                                        ? 'Private'
-                                        : 'Public',
-                                    style:
-                                    const TextStyle(color: GithubColors.offWhite),
+                        InkWell(
+                          onTap: (){
+                            Get.to(LastCommitPage(user: 'yuktagopalani', repo: data[index].name ?? ''));
+                          },
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                // WidgetSpan(
+                                //   alignment: PlaceholderAlignment.middle,
+                                //   baseline: TextBaseline.ideographic,
+                                  // child: Container(
+                                  //     padding: const EdgeInsets.only(right: 6),
+                                  //     child: Image.asset(GithubAssetPath.repoIcon, height: 22, color: GithubColors.offWhite,)),
+                                // ),
+                                TextSpan(
+                                  text: data[index].name ?? '',
+                                  style: const TextStyle(
+                                      color: GithubColors.heading,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                WidgetSpan(
+                                  alignment: PlaceholderAlignment.middle,
+                                  baseline: TextBaseline.ideographic,
+                                  child: Container(
+                                    margin:
+                                    const EdgeInsets.only(left: 6),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 2, horizontal: 4),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(
+                                          color: GithubColors.offWhite,
+                                          width: 0.5),
+                                    ),
+                                    child: Text(
+                                      data[index].private == true
+                                          ? 'Private'
+                                          : 'Public',
+                                      style:
+                                      const TextStyle(color: GithubColors.offWhite),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              // const TextSpan(text: 'consectetur'),
-                            ],
+                                // const TextSpan(text: 'consectetur'),
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(height: 6),

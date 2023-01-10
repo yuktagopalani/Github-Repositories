@@ -247,7 +247,7 @@ class Commit {
 }
 
   Commit.fromJson(dynamic json) {
-    _owner = json['owner'] != null ? Owner.fromJson(json['author']) : null;
+    _owner = json['author'] != null ? Owner.fromJson(json['author']) : null;
     _message = json['message'];
     _url = json['url'];
     _commentCount = json['comment_count'];
