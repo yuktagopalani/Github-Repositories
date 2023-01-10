@@ -9,7 +9,7 @@ Future<List<Rrepo>> getAllRepos (String user) async {
         String url = "https://api.github.com/users/" + user + "/repos?sort=updated&direction=desc&per_page=100";
         final response = await http.get(Uri.parse(url));
         print(response.statusCode);
-        print(jsonDecode(response.body)[0]);
+        // print(jsonDecode(response.body)[0]);
         final repoList = jsonDecode(response.body);
         for(int i=0;i<repoList.length;i++){
             Rrepo repo = Rrepo.fromJson(repoList[i]);
@@ -19,6 +19,5 @@ Future<List<Rrepo>> getAllRepos (String user) async {
     catch(e){
         print(e);
     }
-
     return result;
 }

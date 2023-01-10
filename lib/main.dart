@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:githubclone/models/repo.dart';
 import 'package:githubclone/screens/home.dart';
+import 'package:githubclone/services/commits.dart';
 import 'package:githubclone/services/repos.dart';
 
 
@@ -17,6 +18,7 @@ void main() async {
   // {
   //   print(repoList[i].language);
   // }
+  await getLastCommit('yuktagopalani', 'Kitaab');
   runApp(const MyApp());
 }
 
