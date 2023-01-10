@@ -13,10 +13,10 @@ class Repo{
   String _updated_at = '';
   String _language = '';        // Major Language
   String _svn_url = '';         // if forked, owners url
-  List<String> _topics = [];
+  List<dynamic> _topics = [];
   String _license = '';
 
-  Repo.ForNull();
+  // Repo.ForNull();
 
   Repo.name(
       this._name,
@@ -38,7 +38,7 @@ class Repo{
 
   String get license => _license;
 
-  List<String> get topics => _topics;
+  List<dynamic> get topics => _topics;
 
   String get svn_url => _svn_url;
 
@@ -72,7 +72,7 @@ class Repo{
     _license = value;
   }
 
-  set topics(List<String> value) {
+  set topics(List<dynamic> value) {
     _topics = value;
   }
 
@@ -152,7 +152,5 @@ class Repo{
     if(data['license']){
       _license = data['license']['spdx_id'] ?? '';
     }
-
   }
-
 }
