@@ -1,16 +1,11 @@
 # githubrepositories 
 
-A new Flutter project.
+![home screen](https://user-images.githubusercontent.com/59793009/211857143-e8b28250-7f80-48e2-b1d5-c285fc11c9b5.jpeg)
 
-## Getting Started
+![home screen2](https://user-images.githubusercontent.com/59793009/211857409-8cb730ea-4660-4ed4-b873-1672f387b167.jpeg)
 
-This project is a starting point for a Flutter application.
+![commit page](https://user-images.githubusercontent.com/59793009/211857788-bb7c8367-30a7-47b6-99dc-c8e409ed0c4e.jpeg)
 
-A few resources to get you started if this is your first Flutter project:
+![splash screen](https://user-images.githubusercontent.com/59793009/211857827-7cc911bc-9fc8-4183-bff9-20c4c9ed2879.jpeg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
