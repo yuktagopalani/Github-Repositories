@@ -17,16 +17,18 @@ class LastCommitPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: GithubColors.backgroundColor,
       appBar: AppBar(
-
-        iconTheme: const IconThemeData(
-          color: GithubColors.white
-        ),
+        titleSpacing: 0,
+        leading: IconButton(
+            onPressed: (){
+              Get.back();
+            },
+            icon: const Icon(Icons.arrow_back_ios_new_rounded, color: GithubColors.white)),
         backgroundColor: GithubColors.appbarColor,
         title: Text(
-
           'Last Commit: $repo',
           style: const TextStyle(color: GithubColors.white),
           textAlign: TextAlign.start,
+          maxLines: 1,
         ),
       ),
       body: SafeArea(
@@ -45,7 +47,7 @@ class LastCommitPage extends StatelessWidget {
               }
               // print("data is ");
               // print((data.commit?.owner));
-                return Container(
+              return Container(
                   width: Get.width,
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
                   child: Column(
@@ -55,27 +57,27 @@ class LastCommitPage extends StatelessWidget {
                       Row(
                         children: [
                           CircleAvatar(
-                              backgroundImage: NetworkImage(data.author?.avatarUrl ?? ''),
-                              radius: 30,
+                            backgroundImage: NetworkImage(data.author?.avatarUrl ?? ''),
+                            radius: 30,
                           ),
                           const
                           SizedBox(width: 20,),
                           Text(data.author?.login ?? '',
-                          style: const TextStyle(color: GithubColors.offWhite,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold
-                          )
-                            ),
+                              style: const TextStyle(color: GithubColors.offWhite,
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold
+                              )
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 50,),
+                      const SizedBox(height: 20,),
                       Text(data.commit?.message ?? '',
                           style: const TextStyle(color: GithubColors.offWhite,
                               fontSize: 20,
                               fontWeight: FontWeight.bold
                           )
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 20,),
                       Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 2, horizontal: 4),
@@ -90,14 +92,15 @@ class LastCommitPage extends StatelessWidget {
                           const TextStyle(color: GithubColors.offWhite),
                         ),
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 20,),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           const Icon(Icons.access_time_outlined,
-                            color: GithubColors.offWhite,
+                            color: GithubColors.offWhite, size: 15,
                           ),
                           const SizedBox(width: 10,),
-                          Text('last updated on ${(data.commit?.owner?.date).toString().substring(0,10)}' ?? '',
+                          Text('last updated on ${data.commit?.owner?.date?.substring(0,10)}',
                             style:
                             const TextStyle(color: GithubColors.offWhite),
                           )
@@ -107,7 +110,7 @@ class LastCommitPage extends StatelessWidget {
                       Row()
                     ],
                   )
-                );
+              );
             },
 
           ),
