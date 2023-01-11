@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         loaderColor: GithubColors.white,
         showLoader: true,
         loadingText: const Text("Loading...", style: TextStyle(color: GithubColors.white, fontSize: 18, fontWeight: FontWeight.w500 )),
-        navigator: const HomePage(),
+        navigator: const HomePagee(),
         durationInSeconds: 4,
       ),
       //getPages: AppRoutes.routes,
