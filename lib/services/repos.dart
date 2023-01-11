@@ -3,13 +3,18 @@ import 'package:githubclone/models/repo.dart';
 import 'package:githubclone/models/rrepo.dart';
 import 'package:http/http.dart' as http;
 
-Future<List<Rrepo>> getAllRepos (String user) async {
+Future<List<Rrepo>> getAllRepos (String user, int page) async {
     List<Rrepo> result = [];
     try{
+        print('In service section');
         var headers = {
-            'authorization': 'Bearer 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'
+            'USERNAME': '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'
         };
-        String url = "https://api.github.com/users/" + user + "/repos?sort=updated&direction=desc&per_page=100";
+        print(user);
+        print(page);
+        String url = "https://api.github.com/users/$user/repos?sort=updated&direction=desc&page=$page&per_page=15";
+        // String url = "https://api.github.com/users/" + user + "/repos?sort=updated&direction=desc&per_page=100";
+        print('before api call');
         final response = await http.get(Uri.parse(url), headers: headers);
 
         print(response.statusCode);
